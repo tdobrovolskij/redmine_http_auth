@@ -1,6 +1,4 @@
-ActionController::Routing::Routes.draw do |map|
-  map.httpauthlogin 'httpauth-login', :controller => 'welcome'
-  
-  map.httpauthselfregister 'httpauth-selfregister/:action',
-    :controller => 'registration', :action => 'autoregistration_form'
+RedmineApp::Application.routes.draw do
+  match 'httpauth-login', :to => 'welcome#index'
+  match 'httpauth-selfregister', :to => 'registration#autoregistration_form'
 end

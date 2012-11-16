@@ -1,3 +1,4 @@
+module RedmineHttpAuth
 module HTTPAuthPatch
   unloadable
   
@@ -91,4 +92,4 @@ module HTTPAuthPatch
     end
   end
 end
-
+end
