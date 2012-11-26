@@ -1,6 +1,10 @@
 module HttpAuthHelper
   unloadable
   
+  def httpauthselfregister_url
+    httpauthselfregister_url = "/httpauth-selfregister"
+  end
+
   def user_attributes
     ['login', 'mail', 'firstname', 'lastname']
   end
@@ -22,6 +26,7 @@ module HttpAuthHelper
   end
 
   def remote_user
+    Rails.logger.debug 'attempting to build remote-user'
     request.env[Setting.plugin_redmine_http_auth['server_env_var']]
   end
 

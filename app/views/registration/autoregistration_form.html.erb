@@ -1,26 +1,18 @@
-<h2><%=l(:label_autoregister)%></h2>
+<h2><%=l(:label_register)%></h2>
 
-<% form_tag({:action => 'register'}, :class => "tabular") do %>
+<%= labelled_form_for @user, :url => {:action => 'register'} do |f| %>
 <%= error_messages_for 'user' %>
 
-<div class="box">
-<!--[form:user]-->
-<p><label for="user_login"><%=l(:field_login)%> <span class="required">*</span></label>
-<%= text_field 'user', 'login', :size => 25, :disabled => (readonly_attribute? 'login') %></p>
+<div class="box tabular">
 
-<p><label for="user_firstname"><%=l(:field_firstname)%> <span class="required">*</span></label>
-<%= text_field 'user', 'firstname', :disabled => (readonly_attribute? 'firstname')  %></p>
+<p><%= f.text_field :firstname, :required => true %></p>
+<p><%= f.text_field :lastname, :required => true %></p>
+<p><%= f.text_field :mail, :required => true %></p>
+<p><%= f.select :language, lang_options_for_select %></p>
 
-<p><label for="user_lastname"><%=l(:field_lastname)%> <span class="required">*</span></label>
-<%= text_field 'user', 'lastname', :disabled => (readonly_attribute? 'lastname')  %></p>
-
-<p><label for="user_mail"><%=l(:field_mail)%> <span class="required">*</span></label>
-<%= text_field 'user', 'mail', :disabled => (readonly_attribute? 'mail')  %></p>
-
-<p><label for="user_language"><%=l(:field_language)%></label>
-<%= select("user", "language", lang_options_for_select) %></p>
-
-<!--[eoform:user]-->
+<% @user.custom_field_values.select {|v| v.editable? || v.required?}.each do |value| %>
+  <p><%= custom_field_tag_with_label :user, value %></p>
+<% end %>
 </div>
 
 <%= submit_tag l(:button_submit) %>

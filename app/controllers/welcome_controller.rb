@@ -1,5 +1,6 @@
 # Land us at the root of the App
 class WelcomeController < ApplicationController
+
   unloadable
   include HttpAuthHelper
   helper :http_auth
