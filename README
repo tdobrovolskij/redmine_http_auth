@@ -1,3 +1,15 @@
+UPDATE (2012-11-26)
+=======
+
+This is an updated version of the original Adam Lantos redmine_http_auth 
+plugin. 
+
+This update is known to work with Redmine 2.0.x versions.
+
+To the best of my knowledge the original functionality is complete. 
+(with the exception of the menu item - commented in init.rb)
+
+
 HTTP Authentication plugin for Redmine
 =======
 
@@ -17,9 +29,9 @@ will override the form-based login.
 Installation
 =======
 
-Use the following command in your Redmine instance directory:
+Use the following command from within your Redmine plugin directory:
 
-# ruby script/plugin install http://github.com/AdamLantos/redmine_http_auth.git
+# git checkout https://github.com/kevinfoote/redmine_http_auth.git 
 
 
 Settings
