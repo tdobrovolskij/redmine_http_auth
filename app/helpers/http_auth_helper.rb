@@ -1,8 +1,8 @@
 module HttpAuthHelper
   unloadable
-  
+
   def httpauthselfregister_url
-    httpauthselfregister_url = "/httpauth-selfregister"
+    httpauthselfregister_url = home_url + "httpauth-selfregister"
   end
 
   def user_attributes
