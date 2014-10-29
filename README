@@ -8,6 +8,7 @@ It fixes 2 issues:
 
   1. There was a bug with installations in subdirectories(f.e. example.com/redmine). New users were being redirected incorrectly.
   2. Login wasn't being set correctly to user's email even if this option was enabled.
+  3. New user was sent into infinite loop(http://mark.diatonic.de/linux/redmine-http-auth-plugin-fix).
 
 UPDATE (2012-11-26)
 =======
